@@ -1,4 +1,5 @@
 import React, { SyntheticEvent, useState } from 'react';
+import axios from 'axios';
 import { Redirect } from 'react-router';
 
 const Register = () => {
@@ -11,25 +12,28 @@ const Register = () => {
   const [redirect, setRedirect] = useState(false)
 
 
-  const submit = async(e: SyntheticEvent) => {
-    e.preventDefault()
-    
-    const response = await fetch('http://127.0.0.1:8000/api/auth/register/', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-          username,
-          password,
-          email,
-          first_name,
-          last_name,
+    const submit = async(e: SyntheticEvent) => {
+      e.preventDefault()
+      
+      const response = await fetch('http://127.0.0.1:8000/api/auth/register/', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            username,
+            password,
+            email,
+            first_name,
+            last_name,
+        })
       })
-    })
-    const content = await response.json()
-    console.log(content)
+      const content = await response.json()
+      console.log(content)
 
-    setRedirect(true);
-  }
+      setRedirect(true);
+    }
+
+
+  
 
   if (redirect) {
     return <Redirect to='/login'/>

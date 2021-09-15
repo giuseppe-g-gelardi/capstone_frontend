@@ -16,7 +16,7 @@ const Login = () => {
       username,
       password,
     }).then((response) => {
-      // console.log(response)
+      console.log(response)
       localStorage.setItem('token', response.data.access)
       // console.log(localStorage.getItem('token'))
     }, (err) => {
