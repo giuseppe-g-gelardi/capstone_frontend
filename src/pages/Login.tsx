@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { SyntheticEvent, useState } from 'react';
 import { Redirect } from 'react-router';
 
@@ -11,14 +12,15 @@ const Login = () => {
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
 
-    await fetch('http://127.0.0.1:8000/api/auth/login/', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      // credentials: 'include',
-      body: JSON.stringify({
-          username,
-          password,
-      })
+    axios.post('http://127.0.0.1:8000/api/auth/login/', {
+      username,
+      password,
+    }).then((response) => {
+      // console.log(response)
+      localStorage.setItem('token', response.data.access)
+      // console.log(localStorage.getItem('token'))
+    }, (err) => {
+      console.log(err)
     })
     setRedirect(true)
   }
