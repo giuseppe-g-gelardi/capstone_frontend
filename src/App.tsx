@@ -5,6 +5,7 @@ import {BrowserRouter, Route} from 'react-router-dom'
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Register from './pages/Register';
+import UserHome from './pages/UserHome';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Navigation />
       <main className="form-signin">
           <Route path='/' exact component={Home} />
+          <Route path='/userhome' exact component={UserHome} />
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
       </main>
