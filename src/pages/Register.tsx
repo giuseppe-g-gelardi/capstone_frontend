@@ -13,27 +13,28 @@ const Register = () => {
 
 
     const submit = async(e: SyntheticEvent) => {
+      let res
       e.preventDefault()
-      
-      const response = await fetch('http://127.0.0.1:8000/api/auth/register/', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            username,
-            password,
-            email,
-            first_name,
-            last_name,
-        })
-      })
-      const content = await response.json()
+      var user = {
+     
+          username : username,
+          password: password,
+          email: email,
+          first_name: first_name,
+          last_name: last_name,
+      }
+      try{  
+         res = await axios.post('http://127.0.0.1:8000/api/auth/register/',user)
+      }
+      catch(err){
+        console.log(err)
+      }
+    
+      const content = res
       console.log(content)
 
       setRedirect(true);
     }
-
-
-  
 
   if (redirect) {
     return <Redirect to='/login'/>
