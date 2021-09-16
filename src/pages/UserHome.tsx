@@ -6,6 +6,7 @@ import { Redirect } from 'react-router';
 
 const UserHome = () => {
   // const [name, setName] = useState('')
+  const [redirect, setRedirect] = useState(false)
   // const [redirect, setRedirect] = (false)
   const [user, setUser] = useState()
 
@@ -30,10 +31,15 @@ const UserHome = () => {
       }, (err) => {
         console.log(err)
         //redirect back to login
+        setRedirect(true)
       })
     } catch {
       // console.log(user)
     }
+  }
+
+  if (redirect) {
+    return <Redirect to='/login' />
   }
 
 
