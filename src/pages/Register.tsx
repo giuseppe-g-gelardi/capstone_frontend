@@ -16,7 +16,6 @@ const Register = () => {
       let res
       e.preventDefault()
       var user = {
-     
           username : username,
           password: password,
           email: email,
