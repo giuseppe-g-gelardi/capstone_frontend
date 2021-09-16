@@ -1,13 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState, SyntheticEvent } from 'react';
 import jwtDecode from 'jwt-decode';
-import { useIsRTL } from 'react-bootstrap/esm/ThemeProvider';
 import { Redirect } from 'react-router';
 
 const UserHome = () => {
-  // const [name, setName] = useState('')
   const [redirect, setRedirect] = useState(false)
-  // const [redirect, setRedirect] = (false)
   const [user, setUser] = useState()
 
 
