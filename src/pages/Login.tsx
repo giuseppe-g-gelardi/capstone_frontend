@@ -18,6 +18,7 @@ const Login = () => {
     }).then((response) => {
       // console.log(response)
       localStorage.setItem('token', response.data.access)
+      window.location.reload()
       // console.log(localStorage.getItem('token'))
     }, (err) => {
       console.log(err)
