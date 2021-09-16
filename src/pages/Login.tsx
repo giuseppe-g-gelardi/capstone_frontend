@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { SyntheticEvent, useState } from 'react';
 import { Redirect } from 'react-router';
+import Button from '@mui/material/Button'
+
 
 
 const Login = () => {
@@ -41,7 +43,8 @@ const Login = () => {
               onChange={e => setPassword(e.target.value)}/>
 
             
-            <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            {/* <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button> */}
+            <Button variant="contained" type="submit">Sign in</Button>
         </form>
   )
 }

@@ -1,21 +1,19 @@
 import React, { useEffect, useState, } from 'react';
 import './App.css';
-import Navigation from './components/Navigation';
 import {BrowserRouter, Route} from 'react-router-dom' 
+import { Redirect } from 'react-router';
+import axios from 'axios';
+import jwtDecode from 'jwt-decode';
+import Navigation from './components/Navigation';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Register from './pages/Register';
 import UserHome from './pages/UserHome';
-import { Redirect } from 'react-router';
-import axios from 'axios';
-import jwtDecode from 'jwt-decode';
-
+import Portfolio from './pages/Portfolio';
+import Commissions from './pages/Commissions';
 
 function App() {
-
-  const [redirect, setRedirect] = useState(false)
   const [user, setUser] = useState('')
-
 
   useEffect(() => {
     getUserFromToken()
@@ -35,26 +33,24 @@ function App() {
 
       }, (err) => {
         console.log(err)
-        // setRedirect(true)
       })
     } catch {
       // not sure what to put here
     }
   }
 
-  // if (redirect) {
-  //   return <Redirect to='/login' />
-  // }
-
   return (
     <div className="App">
       <BrowserRouter>
       <Navigation user={user}/>
       <main className="form-signin">
-          <Route path='/' exact component={Home} />
-          <Route path='/userhome' exact component={() => <UserHome user={user}/>} />
-          <Route path='/login' component={Login} />
-          <Route path='/register' component={Register} />
+        <Route path='/' exact component={Home} />
+        <Route path='/userhome' exact component={() => <UserHome user={user}/>} />
+        <Route path='/login' component={Login} />
+        <Route path='/register' component={Register} />
+        <Route path='/portfolio' component={Portfolio} />
+        <Route path='/commissions' component={Commissions} />
+
       </main>
       </BrowserRouter>
     </div>
