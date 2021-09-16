@@ -24,7 +24,8 @@ const Register = () => {
           last_name: last_name,
       }
       try{  
-         res = await axios.post('http://127.0.0.1:8000/api/auth/register/',user)
+         res = await axios.post('http://127.0.0.1:8000/api/auth/register/', user)
+         
       }
       catch(err){
         console.log(err)
