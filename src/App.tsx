@@ -11,6 +11,7 @@ import Register from './pages/Register';
 import UserHome from './pages/UserHome';
 import Portfolio from './pages/Portfolio';
 import Commissions from './pages/Commissions';
+import Footer from './components/Footer';
 
 function App() {
   const [user, setUser] = useState('')
@@ -53,6 +54,7 @@ function App() {
 
       </main>
       </BrowserRouter>
+      <Footer /> 
     </div>
   );
 }

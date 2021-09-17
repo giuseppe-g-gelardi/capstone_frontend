@@ -46,36 +46,36 @@ const Navigation = (props: { user: string }) => {
 
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+          <div className="container-fluid">
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <Link to="/" className="navbar-brand" >Home</Link>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <Link to="/" className="navbar-brand" >Home</Link>
 
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                <Link to="/portfolio" className="nav-link">Portfolio</Link>
-              </li>
-              <li className="nav-item active">
-                <Link to="/commissions" className="nav-link">Commissions</Link>
-              </li>
-            </ul>
+              <ul className="navbar-nav mr-auto">
+                <li className="nav-item active">
+                  <Link to="/portfolio" className="nav-link">Portfolio</Link>
+                </li>
+                <li className="nav-item active">
+                  <Link to="/commissions" className="nav-link">Commissions</Link>
+                </li>
+              </ul>
+            </div>
+    
+              <div>
+                {menu}            
+              </div>
           </div>
-          
-          
-
-            
-
-            
-          <div>
-            {menu}            
-          </div>
-        </div>
-      </nav>
+        </nav>
   )
 }
 
 export default Navigation;
+
+
+
+
+
 
 // <!--the navbar-->
 //     <nav id="navbar" style="background-color: #221f22" class="navbar navbar-dark navbar-expand-md fixed-top">
