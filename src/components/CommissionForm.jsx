@@ -4,7 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 const CommissionForm = () => {
   const [layout, setLayout] = useState({})
   const [color, setColor] = useState({})
-  const [keycapColor, setKeycapColor] = useState({})
+  const [keycap_color, setKeycap_color] = useState({})
 
   const submit = async (e) => {
     e.preventDefault();
@@ -12,7 +12,7 @@ const CommissionForm = () => {
     let requestForm = {
       layout,
       color,
-      keycapColor,
+      keycap_color,
     }
     
     try {
@@ -22,6 +22,16 @@ const CommissionForm = () => {
       console.log('im catching!')
     }
   }
+
+    // axios.post('http://127.0.0.1:8000/api/auth/login/', {
+    //   username,
+    //   password,
+    // }).then((response) => {
+    //   localStorage.setItem('token', response.data.access)
+    //   window.location.reload()
+    // }, (err) => {
+    //   console.log(err)
+    // })
 
 // ADD KEYS!
   return (
@@ -43,7 +53,7 @@ const CommissionForm = () => {
         </Form.Select>
 
         <Form.Select aria-label="keycap-color"
-        onChange={e => setKeycapColor(e.currentTarget.value)}>
+        onChange={e => setKeycap_color(e.currentTarget.value)}>
           <option>Keycap Color!</option>
           <option key="1" value="dracula">Dracula</option>
           <option key="2" value="muted">Muted</option>

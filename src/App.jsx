@@ -1,7 +1,6 @@
 import React, { useEffect, useState, } from 'react';
 import './App.css';
 import {BrowserRouter, Route} from 'react-router-dom' 
-import { Redirect } from 'react-router';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 import Navigation from './components/Navigation';
