@@ -59,6 +59,9 @@ const Navigation = (props: { user: string }) => {
                 <li className="nav-item active">
                   <Link to="/commissions" className="nav-link">Commissions</Link>
                 </li>
+                <li className="nav-item active">
+                  <Link to="/about" className="nav-link">About</Link>
+                </li>
               </ul>
             </div>
     
