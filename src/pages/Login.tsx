@@ -3,8 +3,6 @@ import React, { SyntheticEvent, useState } from 'react';
 import { Redirect } from 'react-router';
 import Button from '@mui/material/Button'
 
-
-
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -42,7 +40,7 @@ const Login = () => {
             
             {/* <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button> */}
             <Button variant="contained" type="submit">Sign in</Button>
-        </form>
+    </form>
   )
 }
 

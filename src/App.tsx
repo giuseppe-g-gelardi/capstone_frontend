@@ -12,7 +12,6 @@ import UserHome from './pages/UserHome';
 import Portfolio from './pages/Portfolio';
 import Commissions from './pages/Commissions';
 import Footer from './components/Footer';
-import { TokenClass } from 'typescript';
 
 function App() {
   const [user, setUser] = useState('')
@@ -51,7 +50,8 @@ function App() {
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
         <Route path='/portfolio' component={Portfolio} />
-        <Route path='/commissions' component={Commissions} />
+        {/* <Route path='/commissions' component={Commissions} /> */}
+        <Route path='/commissions' component={() => <Commissions user={user}/>} />
 
       </main>
       </BrowserRouter>
