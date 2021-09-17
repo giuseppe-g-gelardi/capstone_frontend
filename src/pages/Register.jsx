@@ -1,7 +1,6 @@
-import React, { SyntheticEvent, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router';
-import Button from '@mui/material/Button'
 
 const Register = () => {
   const [first_name, setFirstName] = useState('')
@@ -13,7 +12,7 @@ const Register = () => {
   const [redirect, setRedirect] = useState(false)
 
 
-    const submit = async(e: SyntheticEvent) => {
+    const submit = async(e) => {
       let res
       e.preventDefault()
       let user = {
@@ -66,9 +65,9 @@ const Register = () => {
               <input type="email" className="form-control"  placeholder="Email@example.com" required 
               onChange={e => setEmail(e.target.value)}/>
 
-              {/* <button className="w-100 btn btn-lg btn-primary" type="submit">Create Account</button> */}
+              <button className="w-100 btn btn-lg btn-primary" type="submit">Create Account</button>
 
-              <Button variant="contained" type="submit">Create Account</Button>
+              
       </form>
 
     </div>

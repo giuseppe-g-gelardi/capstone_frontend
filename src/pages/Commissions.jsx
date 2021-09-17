@@ -1,7 +1,7 @@
 import React from 'react';
 import CommissionForm from '../components/CommissionForm';
 
-const Commissions = (props: {user: string}) => {
+const Commissions = (props) => {
 
   let commissionForm;
 

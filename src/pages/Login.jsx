@@ -1,14 +1,13 @@
 import axios from 'axios';
-import React, { SyntheticEvent, useState } from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router';
-import Button from '@mui/material/Button'
 
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [redirect, setRedirect] = useState(false)
 
-  const submit = async (e: SyntheticEvent) => {
+  const submit = async (e) => {
     e.preventDefault();
 
     axios.post('http://127.0.0.1:8000/api/auth/login/', {
@@ -38,8 +37,7 @@ const Login = () => {
               onChange={e => setPassword(e.target.value)}/>
 
             
-            {/* <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button> */}
-            <Button variant="contained" type="submit">Sign in</Button>
+            <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
     </form>
   )
 }

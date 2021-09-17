@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserHome = (props: {user: string}) => {
+const UserHome = (props) => {
   
   return (
     <div>

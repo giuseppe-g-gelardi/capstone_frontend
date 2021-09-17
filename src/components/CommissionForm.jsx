@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useState } from 'react';
+import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
 const CommissionForm = () => {
@@ -14,7 +14,7 @@ const CommissionForm = () => {
   const [weightFinish, setWeightFinish] = useState({})
   const [mountingStyle, setMountingStyle] = useState({})
 
-  const submit = async (e: SyntheticEvent) => {
+  const submit = async (e) => {
     e.preventDefault();
 
     let requestForm = {

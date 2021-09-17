@@ -22,16 +22,16 @@ function App() {
   })
 
   const getUserFromToken = () => {
-    const token: any = localStorage.getItem('token');
+    const token = localStorage.getItem('token');
     try{
-      const userdata:any = jwtDecode(token)
+      const userdata = jwtDecode(token)
       const userid = userdata['user_id']
-      const response = axios.get(`http://127.0.0.1:8000/api/users/${userid}`, {
+      axios.get(`http://127.0.0.1:8000/api/users/${userid}`, {
         headers: {Authorization: 'Bearer ' + token}
       }).then((response) => {
         // console.log(response.data)
-        const user = response.data[0].first_name
-        setUser(user)
+        const something = response.data[0].first_name
+        setUser(something)
 
       }, (err) => {
         console.log(err)
@@ -51,7 +51,7 @@ function App() {
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
         <Route path='/portfolio' component={Portfolio} />
-        <Route path='about' component={About} />
+        <Route path='/about' component={About} />
         <Route path='/commissions' component={() => <Commissions user={user}/>} />
 
       </main>
