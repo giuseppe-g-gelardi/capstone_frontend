@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import axios from 'axios';
+import jwtDecode from 'jwt-decode';
 
 const CommissionForm = () => {
+  const [user, setUser] = useState({})
   const [layout, setLayout] = useState({})
   const [color, setColor] = useState({})
   const [keycap_color, setKeycap_color] = useState({})
@@ -9,7 +12,22 @@ const CommissionForm = () => {
   const submit = async (e) => {
     e.preventDefault();
 
+    const token = localStorage.getItem('token');
+    const userdata = jwtDecode(token)
+    const userid = userdata['user_id']
+    axios.post(`http://127.0.0.1:8000/api/users/keyboards/${userid}`, {
+      userid,
+      layout,
+      color,
+      keycap_color,
+    }).then((response) => {
+      console.log(response.data)
+      const userName = response.data[0].first_name
+      setUser(userName)
+    })
+
     let requestForm = {
+      user,
       layout,
       color,
       keycap_color,
@@ -22,18 +40,7 @@ const CommissionForm = () => {
       console.log('im catching!')
     }
   }
-
-    // axios.post('http://127.0.0.1:8000/api/auth/login/', {
-    //   username,
-    //   password,
-    // }).then((response) => {
-    //   localStorage.setItem('token', response.data.access)
-    //   window.location.reload()
-    // }, (err) => {
-    //   console.log(err)
-    // })
-
-// ADD KEYS!
+  
   return (
     <Form onSubmit={submit}>
         <Form.Select aria-label="layout"

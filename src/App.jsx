@@ -28,9 +28,9 @@ function App() {
       axios.get(`http://127.0.0.1:8000/api/users/${userid}`, {
         headers: {Authorization: 'Bearer ' + token}
       }).then((response) => {
-        // console.log(response.data)
-        const something = response.data[0].first_name
-        setUser(something)
+        console.log(response.data)
+        const userName = response.data[0].first_name
+        setUser(userName)
 
       }, (err) => {
         console.log(err)

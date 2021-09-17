@@ -15,6 +15,7 @@ const Login = () => {
       password,
     }).then((response) => {
       localStorage.setItem('token', response.data.access)
+      console.log(response.data)
       window.location.reload()
     }, (err) => {
       console.log(err)
