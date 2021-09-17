@@ -12,6 +12,7 @@ import UserHome from './pages/UserHome';
 import Portfolio from './pages/Portfolio';
 import Commissions from './pages/Commissions';
 import Footer from './components/Footer';
+import { TokenClass } from 'typescript';
 
 function App() {
   const [user, setUser] = useState('')
@@ -21,7 +22,7 @@ function App() {
   })
 
   const getUserFromToken = () => {
-    const token:any = localStorage.getItem('token');
+    const token: any = localStorage.getItem('token');
     try{
       const userdata:any = jwtDecode(token)
       const userid = userdata['user_id']

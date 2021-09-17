@@ -6,7 +6,6 @@ import Button from '@mui/material/Button'
 
 
 const Login = () => {
-
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [redirect, setRedirect] = useState(false)
@@ -18,10 +17,8 @@ const Login = () => {
       username,
       password,
     }).then((response) => {
-      // console.log(response)
       localStorage.setItem('token', response.data.access)
       window.location.reload()
-      // console.log(localStorage.getItem('token'))
     }, (err) => {
       console.log(err)
     })

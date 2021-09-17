@@ -16,7 +16,7 @@ const Register = () => {
     const submit = async(e: SyntheticEvent) => {
       let res
       e.preventDefault()
-      var user = {
+      let user = {
           username : username,
           password: password,
           email: email,
