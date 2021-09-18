@@ -13,31 +13,63 @@ const CommissionForm = (props) => {
     e.preventDefault();
     
     const token = localStorage.getItem('token');
-    try {
     const userdata = jwtDecode(token)
     const userid = userdata['user_id']
-    console.log(userid)
-    let formData = {
-      userid,
-      layout, 
-      color, 
-      keycap_color,
-      user,
+    setUser(userid)
+    console.log(user)
+
+    const headers = {
+      'Authorization': `Bearer ${token}` 
     }
-    axios.post(`http://127.0.0.1:8000/api/users/keyboards/`, formData, {
-      headers: {Authorization: 'Bearer ' + token},
-    }).then((response) => {
-      console.log(response.data)
-      const userName = response.data[0].first_name
-      setUser(userName)
-      console.log(userName)
-    }, (err) => {
-      console.log(err)
-    })
-      console.log('im trying!')
-    } catch(err) {
-      console.log('im catching!')
+
+    const data = {
+      'layout': layout,
+      'color': color,
+      'keycap_color': keycap_color,
+      'user': user,
     }
+
+    const options = {
+      method: 'POST',
+      headers: headers,
+      data: data,
+      url: `http://127.0.0.1:8000/api/users/keyboards/`
+    }
+
+    try{
+      console.log(headers)
+      console.log(data)
+      console.log(options)
+      axios(options).then((response) => {
+        console.log(response)
+      }, (err) => {
+        console.log(err)
+      })
+    } catch {
+      console.log('im catching')
+    }
+    
+
+
+    // let formData = {
+    //   layout, 
+    //   color, 
+    //   keycap_color,
+    //   user,
+    // }
+
+    // axios.post(`http://127.0.0.1:8000/api/users/keyboards/`, formData, {
+    //   headers: {Authorization: 'Bearer ' + token},
+    // }).then((response) => {
+    //   const userName = response.data[0].first_name
+    //   setUser(userName)
+    // }, (err) => {
+    //   console.log(err)
+    // })
+   
+
+
+
   }
   
   return (
@@ -78,35 +110,38 @@ export default CommissionForm
       // keycap_color: keycap_color, 
       // userid: userid,
 
-
-// const CommissionForm = (props) => {
-//   const [user, setUser] = useState({})
-//   const [layout, setLayout] = useState({})
-//   const [color, setColor] = useState({})
-//   const [keycap_color, setKeycap_color] = useState({})
-
-//   const submit = async (e) => {
-//     e.preventDefault();
-
-//     const token = localStorage.getItem('token');
-//     try {
-//     const userdata = jwtDecode(token)
-//     const userid = userdata['user_id']
-//     axios.post(`http://127.0.0.1:8000/api/users/keyboards/${userid}/`, {
-//       userid,
-//       layout,
-//       color,
-//       keycap_color,
-//     }).then((response) => {
-//       console.log(response.data)
-//       const userName = response.data[0].first_name
-//       setUser(userName)
-//       console.log(userName)
-//     }, (err) => {
-//       console.log(err)
-//     })
-//       console.log('im trying!')
-//     } catch(err) {
-//       console.log('im catching!')
-//     }
-//   }
+      // const CommissionForm = (props) => {
+      //   const [user, setUser] = useState({})
+      //   const [layout, setLayout] = useState({})
+      //   const [color, setColor] = useState({})
+      //   const [keycap_color, setKeycap_color] = useState({})
+      
+      //   const submit = async (e) => {
+      //     e.preventDefault();
+          
+      //     const token = localStorage.getItem('token');
+      //     try {
+      //     const userdata = jwtDecode(token)
+      //     const userid = userdata['user_id']
+      //     console.log(userid)
+      //     let formData = {
+      //       layout, 
+      //       color, 
+      //       keycap_color,
+      //       user,
+      //     }
+      //     axios.post(`http://127.0.0.1:8000/api/users/keyboards/`, formData, {
+      //       headers: {Authorization: 'Bearer ' + token},
+      //     }).then((response) => {
+      //       console.log(response.data)
+      //       const userName = response.data[0].first_name
+      //       setUser(userName)
+      //       console.log(userName)
+      //     }, (err) => {
+      //       console.log(err)
+      //     })
+      //       console.log('im trying!')
+      //     } catch(err) {
+      //       console.log('im catching!')
+      //     }
+      //   }
