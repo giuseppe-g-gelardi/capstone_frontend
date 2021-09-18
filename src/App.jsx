@@ -57,7 +57,7 @@ function App() {
 
       </main>
       </BrowserRouter>
-      <Footer /> 
+      <Footer user={user}/> 
     </div>
   );
 }
