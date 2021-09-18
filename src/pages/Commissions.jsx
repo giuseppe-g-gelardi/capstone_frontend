@@ -5,8 +5,6 @@ const Commissions = (props) => {
 
   let commissionForm;
 
-  
-
   if (props.user === '') {
     commissionForm = (
       <h1>You need to be logged in to submit a request!</h1>
@@ -23,6 +21,8 @@ const Commissions = (props) => {
       <h3>fill out this form:</h3>
       <br/>
       {commissionForm}
+      
+
     </div>
   )
 }
