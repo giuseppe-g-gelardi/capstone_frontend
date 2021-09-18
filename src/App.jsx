@@ -12,6 +12,7 @@ import Portfolio from './pages/Portfolio';
 import Commissions from './pages/Commissions';
 import Footer from './components/Footer';
 import About from './pages/About';
+import Inventory from './pages/Inventory';
 
 function App() {
   const [user, setUser] = useState('')
@@ -19,6 +20,8 @@ function App() {
   useEffect(() => {
     getUserFromToken()
   })
+
+  const userToken = localStorage.getItem('token')
 
   const getUserFromToken = () => {
     const token = localStorage.getItem('token');
@@ -28,10 +31,8 @@ function App() {
       axios.get(`http://127.0.0.1:8000/api/users/${userid}`, {
         headers: {Authorization: 'Bearer ' + token}
       }).then((response) => {
-        console.log(response.data)
         const userName = response.data[0].first_name
         setUser(userName)
-
       }, (err) => {
         console.log(err)
       })
@@ -51,7 +52,8 @@ function App() {
         <Route path='/register' component={Register} />
         <Route path='/portfolio' component={Portfolio} />
         <Route path='/about' component={About} />
-        <Route path='/commissions' component={() => <Commissions user={user}/>} />
+        <Route path='/inventory' component={Inventory} />
+        <Route path='/commissions' component={() => <Commissions token={userToken} user={user}/>} />
 
       </main>
       </BrowserRouter>

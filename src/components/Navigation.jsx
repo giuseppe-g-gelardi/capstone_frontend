@@ -43,8 +43,6 @@ const Navigation = (props) => {
     return <Redirect to='/home'/>
   }
 
-
-
   return (
       <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
           <div className="container-fluid">
@@ -61,6 +59,9 @@ const Navigation = (props) => {
                 </li>
                 <li className="nav-item active">
                   <Link to="/about" className="nav-link">About</Link>
+                </li>
+                <li className="nav-item active">
+                  <Link to="/inventory" className="nav-link">Inventory</Link>
                 </li>
                 
               </ul>

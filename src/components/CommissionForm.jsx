@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
-const CommissionForm = () => {
+const CommissionForm = (props) => {
   const [user, setUser] = useState({})
   const [layout, setLayout] = useState({})
   const [color, setColor] = useState({})
@@ -11,31 +11,30 @@ const CommissionForm = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-
+    
     const token = localStorage.getItem('token');
+    try {
     const userdata = jwtDecode(token)
     const userid = userdata['user_id']
-    axios.post(`http://127.0.0.1:8000/api/users/keyboards/${userid}`, {
+    console.log(userid)
+    let formData = {
       userid,
-      layout,
-      color,
+      layout, 
+      color, 
       keycap_color,
+      user,
+    }
+    axios.post(`http://127.0.0.1:8000/api/users/keyboards/`, formData, {
+      headers: {Authorization: 'Bearer ' + token},
     }).then((response) => {
       console.log(response.data)
       const userName = response.data[0].first_name
       setUser(userName)
+      console.log(userName)
+    }, (err) => {
+      console.log(err)
     })
-
-    let requestForm = {
-      user,
-      layout,
-      color,
-      keycap_color,
-    }
-    
-    try {
       console.log('im trying!')
-      console.log(requestForm)
     } catch(err) {
       console.log('im catching!')
     }
@@ -73,3 +72,41 @@ const CommissionForm = () => {
 }
 
 export default CommissionForm
+
+      // layout: layout,
+      // color: color,
+      // keycap_color: keycap_color, 
+      // userid: userid,
+
+
+// const CommissionForm = (props) => {
+//   const [user, setUser] = useState({})
+//   const [layout, setLayout] = useState({})
+//   const [color, setColor] = useState({})
+//   const [keycap_color, setKeycap_color] = useState({})
+
+//   const submit = async (e) => {
+//     e.preventDefault();
+
+//     const token = localStorage.getItem('token');
+//     try {
+//     const userdata = jwtDecode(token)
+//     const userid = userdata['user_id']
+//     axios.post(`http://127.0.0.1:8000/api/users/keyboards/${userid}/`, {
+//       userid,
+//       layout,
+//       color,
+//       keycap_color,
+//     }).then((response) => {
+//       console.log(response.data)
+//       const userName = response.data[0].first_name
+//       setUser(userName)
+//       console.log(userName)
+//     }, (err) => {
+//       console.log(err)
+//     })
+//       console.log('im trying!')
+//     } catch(err) {
+//       console.log('im catching!')
+//     }
+//   }
