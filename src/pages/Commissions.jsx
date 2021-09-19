@@ -1,7 +1,5 @@
 import React from 'react';
 import CommissionForm from '../components/CommissionForm';
-import CommissionSubmit from '../components/CommissionSubmit';
-
 
 const Commissions = (props) => {
 
@@ -24,7 +22,6 @@ const Commissions = (props) => {
       <h3>fill out this form:</h3>
       <br/>
       {commissionForm}
-      {/* <CommissionSubmit/> */}
     </div>
   )
 }

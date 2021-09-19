@@ -4,8 +4,6 @@ import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 import CommissionSubmit from './CommissionSubmit';
 
-
-
 const CommissionForm = () => {
   const [user, setUser] = useState({})
   const [layout, setLayout] = useState({})
@@ -39,14 +37,12 @@ const CommissionForm = () => {
         data: data,
         url: `http://127.0.0.1:8000/api/users/keyboards/`
       }
-      
 
       try{
         console.log(options)
         axios(options).then((response) => {
           // console.log(response)
           setIsSubmitted(true)
-          // console.log(isSubmitted)
         }, (err) => {
           console.log(err)
         })
@@ -55,10 +51,6 @@ const CommissionForm = () => {
       }
   }
 
-  
-        
- 
-  
   return (
     <div>
     <div className="commissionform">
@@ -98,9 +90,3 @@ const CommissionForm = () => {
 }
 
 export default CommissionForm
-
-    // <h2>
-    //   you chose an {color} {layout} with {keycap_color} keycaps!
-    // </h2>
-
-    // onClick={e => setIsSubmitted(true)}
