@@ -1,10 +1,7 @@
-import jwtDecode from 'jwt-decode';
 import React from 'react';
 import './Footer.css'
 
 const Footer = (props) => {
- 
-
   let footer;
 
   if (props.user === '') {
@@ -29,8 +26,6 @@ const Footer = (props) => {
     <div>
         {footer}
     </div>
-      
-    
   )
 }
 
