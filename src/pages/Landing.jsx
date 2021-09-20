@@ -4,6 +4,7 @@ import { Redirect } from 'react-router';
 import midway from '../images/midway.jpg'
 import { Card, Button } from 'react-bootstrap';
 
+
 const Landing = () => {
   const [redirect, setRedirect] = useState(false)
 
