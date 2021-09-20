@@ -52,13 +52,13 @@ const Navigation = (props) => {
 
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
+                  <Link to="/about" className="nav-link">About</Link>
+                </li>
+                <li className="nav-item active">
                   <Link to="/portfolio" className="nav-link">Portfolio</Link>
                 </li>
                 <li className="nav-item active">
                   <Link to="/commissions" className="nav-link">Commissions</Link>
-                </li>
-                <li className="nav-item active">
-                  <Link to="/about" className="nav-link">About</Link>
                 </li>
                 <li className="nav-item active">
                   <Link to="/inventory" className="nav-link">Inventory</Link>

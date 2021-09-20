@@ -31,19 +31,19 @@ const Inventory = () => {
     console.log(inventoryData)
   }
 
-  const getFiltered = () => {
-    console.log(filteredItems)
-  }
+  // const getFiltered = () => {
+  //   console.log(filteredItems)
+  // }
 
   return (
 
     <div>
       <h2>Current inventory</h2> 
-      <Form>
+      {/* <Form>
         <input type="text"></input>
         <button  >filter inventory <TiFilter /></button>
       </Form>
-      <Button onClick={getFiltered}> click this also </Button>
+      <Button onClick={getFiltered}> click this also </Button> */}
       
       
       <Table responsive striped bordered hover variant="dark" >
