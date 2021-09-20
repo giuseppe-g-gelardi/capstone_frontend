@@ -14,6 +14,7 @@ import About from './pages/About';
 import Inventory from './pages/Inventory';
 import Landing from './pages/Landing';
 import Commissions from './pages/Commissions';
+import EmailJsForm from './components/EmailJsForm';
 
 function App() {
   const [user, setUser] = useState('')
@@ -29,6 +30,7 @@ function App() {
     try{
       const userdata = jwtDecode(token)
       const userid = userdata['user_id']
+
       axios.get(`http://127.0.0.1:8000/api/users/${userid}`, {
         headers: {Authorization: 'Bearer ' + token}
       }).then((response) => {
@@ -42,6 +44,8 @@ function App() {
     }
   }
 
+  
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -54,8 +58,15 @@ function App() {
         <Route path='/portfolio' exact component={Portfolio} />
         <Route path='/about' exact component={About} />
         <Route path='/inventory' exact component={Inventory} />
-        <Route path='/commissions' exact component={Commissions} />
-        <Route path='/builder' exact component={() => <Builder token={userToken} user={user}/>} />
+        <Route path='/commissions' exact component={() => <Commissions 
+          token={userToken} 
+          user={user}
+          />} />
+          
+        <Route path='/builder' exact component={() => <Builder 
+          token={userToken} 
+          user={user}
+          />} />
 
       </main>
       </BrowserRouter>

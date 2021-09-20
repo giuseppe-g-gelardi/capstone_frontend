@@ -13,10 +13,10 @@ const EmailJsForm = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     send(
-      'SERVICE ID',
-      'TEMPLATE ID',
+      'service_sxlau6k',
+      'template_prcmvb4',
       toSend,
-      'User ID'
+      'user_TRLssI3lckfdrfsD2Jrk3'
     )
     .then((response) => {
       console.log('SUCCESS!', response.status, response.text)
@@ -24,6 +24,7 @@ const EmailJsForm = () => {
     .catch((err) => {
       console.log('FAILED...', err)
     })
+    e.target.reset() 
   }
 
   const handleChange = (e) => {
@@ -45,6 +46,7 @@ const EmailJsForm = () => {
           name='to_name'
           placeholder='to name'
           value={toSend.to_name}
+          onChange={handleChange}
           />
         <input
           type='text'
