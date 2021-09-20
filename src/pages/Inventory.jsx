@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import axios from 'axios';
+import { TiFilter } from "react-icons/ti";
+import { Form } from 'react-bootstrap';
+import Button from '@restart/ui/esm/Button';
 
 const Inventory = () => {
-
   const [inventoryData, setInventoryData] = useState([])
+  const [filteredItems, setFilteredItems] = useState([])
 
   useEffect(() => {
     getInventory()
@@ -23,11 +26,31 @@ const Inventory = () => {
     }
   }
 
+  // const filteredElements = inventoryData.filter((el) => el.includes(filteredItems))
+
+
+
+
+  const getData = () => {
+    console.log(inventoryData)
+  }
+
+  const getFiltered = () => {
+    console.log(filteredItems)
+  }
+
 
   return (
 
     <div>
-      <h1>Current inventory</h1>
+      <h2>Current inventory</h2> 
+      <Form>
+        <input type="text" onChange={e => setFilteredItems(e.target.value)}></input>
+        <button  onSubmit={e => setInventoryData(filteredItems)}>filter inventory <TiFilter /></button>
+      </Form>
+      <Button onClick={getFiltered}> click this also </Button>
+      
+      
       <Table responsive striped bordered hover variant="dark" >
         <thead >
           <tr>
@@ -42,18 +65,22 @@ const Inventory = () => {
           </tr>
         </thead>
         <tbody>
+          {inventoryData.map((item) => 
           <tr>
-            <td>{inventoryData.map((item, index) => <li key={index}>{item.name}</li>)}</td>
-            <td>{inventoryData.map((item, index) => <li key={index}>{item.layout}</li>)}</td>
-            <td>{inventoryData.map((item, index) => <li key={index}>{item.color}</li>)}</td>
-            <td>{inventoryData.map((item, index) => <li key={index}>{item.angle}</li>)}</td>
-            <td>{inventoryData.map((item, index) => <li key={index}>{item.switches}</li>)}</td>
-            <td>{inventoryData.map((item, index) => <li key={index}>{item.keycaps}</li>)}</td>
-            <td>{inventoryData.map((item, index) => <li key={index}>{item.plate}</li>)}</td>
-            <td>{inventoryData.map((item, index) => <li key={index}>{item.price}</li>)}</td>
+            <td>{item.name}</td>
+            <td>{item.layout}</td>
+            <td>{item.color}</td>
+            <td>{item.angle}</td>
+            <td>{item.switches}</td>
+            <td>{item.keycaps}</td>
+            <td>{item.plate}</td>
+            <td>{item.price}</td>
           </tr>
+          )}
         </tbody>
       </Table>
+
+      <button onClick={getData}>log the datas!!</button>
       
     </div>
   )
