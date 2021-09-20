@@ -48,7 +48,7 @@ const Navigation = (props) => {
           <div className="container-fluid">
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <Link to="/" className="navbar-brand" >Home</Link>
+            <Link to="/home" className="navbar-brand" >Home</Link>
 
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">

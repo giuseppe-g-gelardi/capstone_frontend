@@ -13,6 +13,7 @@ import Commissions from './pages/Commissions';
 import Footer from './components/Footer';
 import About from './pages/About';
 import Inventory from './pages/Inventory';
+import Landing from './pages/Landing';
 
 function App() {
   const [user, setUser] = useState('')
@@ -46,14 +47,15 @@ function App() {
       <BrowserRouter>
       <Navigation user={user}/>
       <main className="form-signin">
-        <Route path='/' exact component={Home} />
+        <Route path='/' exact component={Landing} />
+        <Route path='/home' exact component={Home} />
         <Route path='/userhome' exact component={() => <UserHome user={user}/>} />
-        <Route path='/login' component={Login} />
-        <Route path='/register' component={Register} />
-        <Route path='/portfolio' component={Portfolio} />
-        <Route path='/about' component={About} />
-        <Route path='/inventory' component={Inventory} />
-        <Route path='/commissions' component={() => <Commissions token={userToken} user={user}/>} />
+        <Route path='/login' exact component={Login} />
+        <Route path='/register' exact component={Register} />
+        <Route path='/portfolio' exact component={Portfolio} />
+        <Route path='/about' exact component={About} />
+        <Route path='/inventory' exact component={Inventory} />
+        <Route path='/commissions' exact component={() => <Commissions token={userToken} user={user}/>} />
 
       </main>
       </BrowserRouter>
