@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Table } from 'react-bootstrap';
+import { Table, Form } from 'react-bootstrap';
 import axios from 'axios';
 import { TiFilter } from "react-icons/ti";
-import { Form } from 'react-bootstrap';
 import Button from '@restart/ui/esm/Button';
 
 const Inventory = () => {
@@ -28,9 +27,6 @@ const Inventory = () => {
 
   // const filteredElements = inventoryData.filter((el) => el.includes(filteredItems))
 
-
-
-
   const getData = () => {
     console.log(inventoryData)
   }
@@ -39,14 +35,13 @@ const Inventory = () => {
     console.log(filteredItems)
   }
 
-
   return (
 
     <div>
       <h2>Current inventory</h2> 
       <Form>
-        <input type="text" onChange={e => setFilteredItems(e.target.value)}></input>
-        <button  onSubmit={e => setInventoryData(filteredItems)}>filter inventory <TiFilter /></button>
+        <input type="text"></input>
+        <button  >filter inventory <TiFilter /></button>
       </Form>
       <Button onClick={getFiltered}> click this also </Button>
       
