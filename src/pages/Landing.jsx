@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
-
+// import landing from '../images/landing.png';
+import midway from '../images/midway.jpg'
+import { Image, Container, Card, Button  } from 'react-bootstrap';
 
 const Landing = () => {
   const [redirect, setRedirect] = useState(false)
@@ -8,14 +10,22 @@ const Landing = () => {
 
   
   if (redirect) {
-    return <Redirect to='/userhome'/>
+    return <Redirect to='/home'/>
   }
 
   return (
-    <div className='landing'>
-      <h1>landing page</h1>
-      <button onClick={e => setRedirect(true)}>Enter</button>
-    </div>
+
+    <Card className="bg-dark text-white">
+    <Card.Img src={midway} />
+    <Card.ImgOverlay>
+      <Card.Title>Elevate your workspace...</Card.Title>
+      <Card.Text>
+        A custom bespoke mechanical keyboard will help your fingers avoid fatigue during prolonged typing sessions.
+      </Card.Text>
+      <Button onClick={e => setRedirect(true)}>Enter</Button>
+    </Card.ImgOverlay>
+  </Card>
+    
   )
 }
 
