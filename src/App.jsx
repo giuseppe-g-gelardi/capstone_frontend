@@ -8,11 +8,12 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Register from './pages/Register';
 import Portfolio from './pages/Portfolio';
-import Commissions from './pages/Commissions';
+import Builder from './pages/Builder'
 import Footer from './components/Footer';
 import About from './pages/About';
 import Inventory from './pages/Inventory';
 import Landing from './pages/Landing';
+import Commissions from './pages/Commissions';
 
 function App() {
   const [user, setUser] = useState('')
@@ -53,7 +54,8 @@ function App() {
         <Route path='/portfolio' exact component={Portfolio} />
         <Route path='/about' exact component={About} />
         <Route path='/inventory' exact component={Inventory} />
-        <Route path='/commissions' exact component={() => <Commissions token={userToken} user={user}/>} />
+        <Route path='/commissions' exact component={Commissions} />
+        <Route path='/builder' exact component={() => <Builder token={userToken} user={user}/>} />
 
       </main>
       </BrowserRouter>

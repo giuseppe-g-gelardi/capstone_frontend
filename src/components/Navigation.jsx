@@ -57,6 +57,9 @@ const Navigation = (props) => {
                   <Link to="/portfolio" className="nav-link">Portfolio</Link>
                 </li>
                 <li className="nav-item active">
+                  <Link to="/builder" className="nav-link">Builder</Link>
+                </li>
+                <li className="nav-item active">
                   <Link to="/commissions" className="nav-link">Commissions</Link>
                 </li>
                 <li className="nav-item active">

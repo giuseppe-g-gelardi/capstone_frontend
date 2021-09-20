@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
-import CommissionSubmit from './CommissionSubmit';
+import BuilderSubmit from './BuilderSubmit';
 
-const CommissionForm = () => {
+const BuilderForm = () => {
   const [user, setUser] = useState({})
   const [layout, setLayout] = useState({})
   const [color, setColor] = useState({})
@@ -53,7 +53,7 @@ const CommissionForm = () => {
 
   return (
     <div>
-    <div className="commissionform">
+    <div className="builderform">
       <Form onSubmit={submit}>
           <Form.Select aria-label="layout"
           onChange={e => setLayout(e.currentTarget.value)}>
@@ -79,7 +79,7 @@ const CommissionForm = () => {
           <Button type="submit">Submit!</Button>
         </Form>
         </div>
-        <CommissionSubmit 
+        <BuilderSubmit 
           submitted={isSubmitted}
           layout={layout}
           color={color}
@@ -89,4 +89,4 @@ const CommissionForm = () => {
   )
 }
 
-export default CommissionForm
+export default BuilderForm

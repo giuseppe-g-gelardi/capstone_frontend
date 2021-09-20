@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CommissionSubmit = (props) => {
+const BuilderSubmit = (props) => {
 
   if (props.submitted === true) {
     return (
@@ -17,6 +17,6 @@ const CommissionSubmit = (props) => {
   }
 }
 
-export default CommissionSubmit
+export default BuilderSubmit
 
 

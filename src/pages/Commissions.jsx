@@ -1,29 +1,13 @@
-import React from 'react';
-import CommissionForm from '../components/CommissionForm';
+import React from "react";
 
-const Commissions = (props) => {
-
-
-  let commissionForm;
-
-  if (props.user === '') {
-    commissionForm = (
-      <h1>You need to be logged in to submit a request!</h1>
-    )
-  } else {
-    commissionForm = (
-      <CommissionForm />
-    )
-  }
-
+const Commissions = () => {
   return (
-    <div>
-      <h2>if youre interested in a custom 1:1 commission:</h2>
-      <h3>fill out this form:</h3>
-      <br/>
-      {commissionForm}
+    <div className='commissions'>
+      <h1>
+        commissions request page
+      </h1>
     </div>
   )
 }
 
-export default Commissions;
+export default Commissions
