@@ -3,7 +3,8 @@ import { send } from 'emailjs-com';
 import { Button, Form, Container } from 'react-bootstrap'
 
 
-const EmailJsForm = () => {
+const EmailJsForm = (props) => {
+  let user = props.user 
   const [toSend, setToSend] = useState({
     from_name: '',
     to_name: '',
@@ -35,39 +36,43 @@ const EmailJsForm = () => {
   return (
 
     <Container>
-      <div class="row">
-          <div class="col-md-3"></div>
-          <div class="col-md-6">
+      <div className="row">
+          <div className="col-md-3">
+            <p>when filling out this form, please make sure your email, the one you want me to reply to is correct.</p>
+            <br />
+
+          </div>
+
+          <div className="col-md-6">
 
 
 
         <Form onSubmit={onSubmit}>
           <input
-            type='text'
-            name='from_name'
+            name={user}
             className='form-control'
-            placeholder='from name'
+            placeholder={user}
             value={toSend.from_name}
             onChange={handleChange}
             />
 
-          <input
+          {/* <input
             type='text'
             name='to_name'
             className='form-control'
             placeholder='to name'
             value={toSend.to_name}
             onChange={handleChange}
-            />
-
-          <input
-            type='text'
-            name='message'
-            className='form-control'
-            placeholder='Your message'
-            value={toSend.message}
-            onChange={handleChange}
-            />
+            /> */}
+          <Form.Select 
+            name='to_name' 
+            className='form-control' 
+            value={toSend.to_name} 
+            onChange={handleChange}>
+              <option>Select Designer</option>
+              <option key="1" value="giuseppe">Giuseppe</option>
+              <option key="2" value="matt">Matt</option>
+          </Form.Select>
 
           <input
             type='text'
@@ -78,6 +83,16 @@ const EmailJsForm = () => {
             onChange={handleChange}
             />
 
+
+          <input
+            type='text'
+            name='message'
+            className='form-control'
+            placeholder='Your message'
+            value={toSend.message}
+            onChange={handleChange}
+            />      
+
           <Button type='submit'>Submit</Button>
         </Form>
 
@@ -87,7 +102,24 @@ const EmailJsForm = () => {
 
             
           </div>
-          <div class="col-md-3"></div>
+          <div className="col-md-3">
+
+          <p>please give a detailed description of the keyboard you want to have designed. keep in mind submitting a request does not guarantee i will agree to design it</p>
+            <br />
+          <p>if i agree, i will do my best to get back to you within 24hours with the following:</p>
+          <ol>
+            <li>
+              <span>Detailed Pricing</span>
+            </li>
+            <li>
+              <span>Estimated design time</span>
+            </li>
+            <li>
+              <span>Estimated Production time</span>
+            </li>
+          </ol>
+
+          </div>
       </div>
     </Container>
 

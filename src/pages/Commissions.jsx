@@ -2,7 +2,7 @@ import React from "react";
 import EmailJsForm from "../components/EmailJsForm";
 
 const Commissions = (props) => {
-
+  let user = props.user
   let commissionForm;
 
   if (props.user === '') {
@@ -11,13 +11,12 @@ const Commissions = (props) => {
     )
   } else {
     commissionForm = (
-      <EmailJsForm />
+      <EmailJsForm user={user}/>
     )
   }
 
   return (
     <div className='commissions'>
-      <h1>commissions request page</h1>
       <br />
       {commissionForm}
     </div>

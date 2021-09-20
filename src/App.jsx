@@ -57,6 +57,8 @@ function App() {
         <Route path='/portfolio' exact component={Portfolio} />
         <Route path='/about' exact component={About} />
         <Route path='/inventory' exact component={Inventory} />
+        
+
         <Route path='/commissions' exact component={() => <Commissions 
           token={userToken} 
           user={user}
