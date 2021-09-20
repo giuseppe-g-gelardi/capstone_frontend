@@ -6,7 +6,6 @@ import { Redirect } from 'react-router';
 const Navigation = (props) => {
   const [redirect, setRedirect] = useState(false)
 
-
   const logout = () => {
     localStorage.removeItem('token')
     window.location.reload()

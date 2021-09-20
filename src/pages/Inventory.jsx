@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Form } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import axios from 'axios';
-import { TiFilter } from "react-icons/ti";
-import Button from '@restart/ui/esm/Button';
+// import { TiFilter } from "react-icons/ti";
 
 const Inventory = () => {
   const [inventoryData, setInventoryData] = useState([])
-  const [filteredItems, setFilteredItems] = useState([])
 
   useEffect(() => {
     getInventory()
@@ -25,26 +23,17 @@ const Inventory = () => {
     }
   }
 
-  // const filteredElements = inventoryData.filter((el) => el.includes(filteredItems))
 
   const getData = () => {
     console.log(inventoryData)
   }
 
-  // const getFiltered = () => {
-  //   console.log(filteredItems)
-  // }
+  
 
   return (
 
     <div>
       <h2>Current inventory</h2> 
-      {/* <Form>
-        <input type="text"></input>
-        <button  >filter inventory <TiFilter /></button>
-      </Form>
-      <Button onClick={getFiltered}> click this also </Button> */}
-      
       
       <Table responsive striped bordered hover variant="dark" >
         <thead >

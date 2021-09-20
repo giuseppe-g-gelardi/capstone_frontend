@@ -7,7 +7,6 @@ import Navigation from './components/Navigation';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Register from './pages/Register';
-import UserHome from './pages/UserHome';
 import Portfolio from './pages/Portfolio';
 import Commissions from './pages/Commissions';
 import Footer from './components/Footer';
@@ -48,8 +47,7 @@ function App() {
       <Navigation user={user}/>
       <main className="form-signin">
         <Route path='/' exact component={Landing} />
-        <Route path='/home' exact component={Home} />
-        <Route path='/userhome' exact component={() => <UserHome user={user}/>} />
+        <Route path='/home' exact component={() => <Home user={user}/>} />
         <Route path='/login' exact component={Login} />
         <Route path='/register' exact component={Register} />
         <Route path='/portfolio' exact component={Portfolio} />

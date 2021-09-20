@@ -1,11 +1,21 @@
 import React from 'react';
 
-const Home = () => {
+const Home = (props) => {
+  let greeting;
+
+  if (props.user === '') {
+    greeting = (
+      <h2>Hello!</h2>
+    )
+  } else {
+    greeting = (
+      <h2>Welcome back, {props.user}</h2>
+    )
+  }
+  
   return (
     <div>
-      Hello!
-      <h1>WELCOME</h1>
-      <p>please register an account to fill out a commissions form. otherwise, feel free to enjoy the portfolio gallery</p>
+      {greeting}
     </div>
   )
 }

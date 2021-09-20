@@ -25,7 +25,7 @@ const Login = () => {
   }
 
   if (redirect) {
-    return <Redirect to='/userhome'/>
+    return <Redirect to='/home'/>
   }
 
   return (
