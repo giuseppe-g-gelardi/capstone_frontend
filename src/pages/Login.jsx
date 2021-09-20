@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
+import { Button, Form, Container } from 'react-bootstrap'
+
 
 const Login = () => {
   const [username, setUsername] = useState('')
@@ -29,7 +31,14 @@ const Login = () => {
   }
 
   return (
-    <form onSubmit={submit}>
+
+    <Container>
+      <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+
+
+          <Form onSubmit={submit}>
           <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
               <input type="text" className="form-control"  placeholder="Username" required 
@@ -39,8 +48,21 @@ const Login = () => {
               onChange={e => setPassword(e.target.value)}/>
 
             
-            <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    </form>
+            <Button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</Button>
+          </Form>
+
+
+          </div>
+          <div class="col-md-3"></div>
+      </div>
+    </Container>
+
+
+
+
+
+
+    
   )
 }
 

@@ -14,7 +14,6 @@ import About from './pages/About';
 import Inventory from './pages/Inventory';
 import Landing from './pages/Landing';
 import Commissions from './pages/Commissions';
-import EmailJsForm from './components/EmailJsForm';
 
 function App() {
   const [user, setUser] = useState('')

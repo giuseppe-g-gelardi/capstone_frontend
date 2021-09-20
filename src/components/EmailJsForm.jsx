@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { send } from 'emailjs-com';
-import { Form } from "react-bootstrap";
+import { Button, Form, Container } from 'react-bootstrap'
+
 
 const EmailJsForm = () => {
   const [toSend, setToSend] = useState({
@@ -32,39 +33,75 @@ const EmailJsForm = () => {
   }
 
   return (
-    <div className='emailform'>
-      <Form onSubmit={onSubmit}>
-        <input
-          type='text'
-          name='from_name'
-          placeholder='from name'
-          value={toSend.from_name}
-          onChange={handleChange}
-          />
-        <input
-          type='text'
-          name='to_name'
-          placeholder='to name'
-          value={toSend.to_name}
-          onChange={handleChange}
-          />
-        <input
-          type='text'
-          name='message'
-          placeholder='Your message'
-          value={toSend.message}
-          onChange={handleChange}
-          />
-        <input
-          type='text'
-          name='reply_to'
-          placeholder='Your email'
-          value={toSend.reply_to}
-          onChange={handleChange}
-          />
-          <button type='submit'>onSubmit</button>
-      </Form>
-    </div>
+
+    <Container>
+      <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+
+
+
+        <Form onSubmit={onSubmit}>
+          <input
+            type='text'
+            name='from_name'
+            className='form-control'
+            placeholder='from name'
+            value={toSend.from_name}
+            onChange={handleChange}
+            />
+
+          <input
+            type='text'
+            name='to_name'
+            className='form-control'
+            placeholder='to name'
+            value={toSend.to_name}
+            onChange={handleChange}
+            />
+
+          <input
+            type='text'
+            name='message'
+            className='form-control'
+            placeholder='Your message'
+            value={toSend.message}
+            onChange={handleChange}
+            />
+
+          <input
+            type='text'
+            name='reply_to'
+            className='form-control'
+            placeholder='Your email'
+            value={toSend.reply_to}
+            onChange={handleChange}
+            />
+
+          <Button type='submit'>Submit</Button>
+        </Form>
+
+
+
+
+
+            
+          </div>
+          <div class="col-md-3"></div>
+      </div>
+    </Container>
+
+
+
+
+
+
+
+
+
+
+
+      
   )
 }
 

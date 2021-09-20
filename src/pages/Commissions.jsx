@@ -15,16 +15,10 @@ const Commissions = (props) => {
     )
   }
 
-  const getProps = () => {
-    console.log(props)
-  }
-
-
-
   return (
     <div className='commissions'>
       <h1>commissions request page</h1>
-      <button onClick={getProps}>click me</button>
+      <br />
       {commissionForm}
     </div>
   )
