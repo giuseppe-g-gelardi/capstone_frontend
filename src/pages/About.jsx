@@ -6,6 +6,7 @@ import { Container, Row, Col, Image } from 'react-bootstrap';
 
 const About = () => {
   return (
+
     <Container fluid="md" justify>
     <Row className="justify-content-center">
       <Col><Image src={portrait} fluid /></Col>

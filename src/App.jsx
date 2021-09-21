@@ -14,6 +14,7 @@ import About from './pages/About';
 import Inventory from './pages/Inventory';
 import Landing from './pages/Landing';
 import Commissions from './pages/Commissions';
+import BuilderForm from './components/BuilderForm';
 
 function App() {
   const [user, setUser] = useState('')
@@ -45,6 +46,8 @@ function App() {
 
   
 
+  
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -57,6 +60,7 @@ function App() {
         <Route path='/portfolio' exact component={Portfolio} />
         <Route path='/about' exact component={About} />
         <Route path='/inventory' exact component={Inventory} />
+        <Route path='/builderform' component={() => <BuilderForm user={user}/>}/>
         
 
         <Route path='/commissions' exact component={() => <Commissions 

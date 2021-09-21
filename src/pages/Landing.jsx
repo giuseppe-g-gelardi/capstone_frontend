@@ -9,7 +9,7 @@ const Landing = () => {
   const [redirect, setRedirect] = useState(false)
 
   if (redirect) {
-    return <Redirect to='/home'/>
+    return <Redirect to='/portfolio'/>
   }
 
   return (

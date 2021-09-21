@@ -4,21 +4,22 @@ import BuilderForm from '../components/BuilderForm';
 const Builder = (props) => {
 
 
-  let builderForm;
+  // let builderForm;
 
-  if (props.user === '') {
-    builderForm = (
-      <h1>Please log in if you would like to submit a commission request</h1>
-    )
-  } else {
-    builderForm = (
-      <BuilderForm />
-    )
-  }
+  // if (props.user === '') {
+  //   builderForm = (
+  //     <h1>Please log in if you would like to submit a commission request</h1>
+  //   )
+  // } else {
+  //   builderForm = (
+  //     <BuilderForm />
+  //   )
+  // }
 
   return (
     <div>
-      {builderForm}
+      {/* {builderForm} */}
+      <BuilderForm />
     </div>
   )
 }

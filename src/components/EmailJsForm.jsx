@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { send } from 'emailjs-com';
-import { Button, Form, Container } from 'react-bootstrap'
+import { Button, Form } from 'react-bootstrap'
 
 
 const EmailJsForm = (props) => {
@@ -35,19 +35,23 @@ const EmailJsForm = (props) => {
 
   return (
 
-    <Container>
-      <div className="row">
-          <div className="col-md-3">
-            <p>when filling out this form, please make sure your email, the one you want me to reply to is correct.</p>
-            <br />
 
+
+
+
+    <div class="container">
+      <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+          <h1>Welcome to the commission contact form</h1>
+          <p>Please, please, please read before submitting</p>
           </div>
-
-          <div className="col-md-6">
-
+          <div class="col-md-3"></div>
 
 
-        <Form onSubmit={onSubmit}>
+
+          <div class="col-md-6">
+          <Form onSubmit={onSubmit}>
           <input
             name={user}
             className='form-control'
@@ -56,14 +60,7 @@ const EmailJsForm = (props) => {
             onChange={handleChange}
             />
 
-          {/* <input
-            type='text'
-            name='to_name'
-            className='form-control'
-            placeholder='to name'
-            value={toSend.to_name}
-            onChange={handleChange}
-            /> */}
+          
           <Form.Select 
             name='to_name' 
             className='form-control' 
@@ -97,11 +94,19 @@ const EmailJsForm = (props) => {
         </Form>
 
           </div>
-          <div className="col-md-3">
 
-          <p>please give a detailed description of the keyboard you want to have designed. keep in mind submitting a request does not guarantee i will agree to design it</p>
+          <div class="col-md-6">
+
+            <p>
+              When filling out this form, please make sure the email you enter is correct. It WILL be the one I reply to</p>
             <br />
-          <p>if i agree, i will do my best to get back to you within 24hours with the following:</p>
+            <p>Please give a detailed description of the keyboard you want to have designed. If possible, include links to images, Pantones/RAL's, and any other detail you think might help better convey your idea.
+            <br />
+            <br />
+            <p id='disclaimer'>keep in mind submitting a request does not guarantee I will agree to design it</p>
+              </p>
+            <br />
+          <p>If I agree, however, I will do my best to get back to you within 24hours with the following:</p>
           <ol>
             <li>
               <span>Detailed Pricing</span>
@@ -115,13 +120,29 @@ const EmailJsForm = (props) => {
           </ol>
 
           </div>
+
+
+
+
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
       </div>
-    </Container>
+    </div>
 
 
 
 
 
+    
+
+
+
+
+
+
+    
+      
 
 
 

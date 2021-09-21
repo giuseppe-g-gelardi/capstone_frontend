@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
+import { VscGithub } from 'react-icons/vsc'
+import { GrInstagram } from 'react-icons/gr'
 
 const Navigation = (props) => {
   const [redirect, setRedirect] = useState(false)
@@ -16,6 +18,15 @@ const Navigation = (props) => {
     menu = (
       <ul className="navbar-nav me-auto mb-2 mb-md-0">
         <li className="nav-item active">
+                  <a href="https://github.com/giuseppe-g-gelardi" className="nav-link"> <VscGithub /></a>
+                </li>
+
+                <li className="nav-item active">
+                  <a href="https://www.instagram.com/n_rdyyy/" className="nav-link"> <GrInstagram /></a>
+                </li>
+
+
+        <li className="nav-item active">
           <Link to="/login" className="nav-link">Login</Link>
         </li>
 
@@ -28,6 +39,16 @@ const Navigation = (props) => {
   } else {
     menu = (
       <ul className="navbar-nav me-auto mb-2 mb-md-0">
+
+<li className="nav-item active">
+                  <a href="https://github.com/giuseppe-g-gelardi" className="nav-link"> <VscGithub /></a>
+                </li>
+
+                <li className="nav-item active">
+                  <a href="https://www.instagram.com/n_rdyyy/" className="nav-link"> <GrInstagram /></a>
+                </li>
+
+
         <li className="nav-item active">
           <Link to="/login" className="nav-link" onClick={() => {
             logout();
@@ -47,14 +68,14 @@ const Navigation = (props) => {
           <div className="container-fluid">
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <Link to="/home" className="navbar-brand" >Home</Link>
+            <Link to="/" className="navbar-brand" >Hello...</Link>
 
               <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                  <Link to="/about" className="nav-link">About</Link>
+              <li className="nav-item active">
+                  <Link to="/portfolio" className="nav-link">Portfolio</Link>
                 </li>
                 <li className="nav-item active">
-                  <Link to="/portfolio" className="nav-link">Portfolio</Link>
+                  <Link to="/about" className="nav-link">About</Link>
                 </li>
                 <li className="nav-item active">
                   <Link to="/builder" className="nav-link">Builder (beta)</Link>
@@ -65,6 +86,8 @@ const Navigation = (props) => {
                 <li className="nav-item active">
                   <Link to="/inventory" className="nav-link">Inventory</Link>
                 </li>
+
+                
                 
               </ul>
             </div>

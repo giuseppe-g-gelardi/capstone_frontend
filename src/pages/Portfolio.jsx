@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Container } from 'react-bootstrap'
 import Carousel from 'react-bootstrap/Carousel'
 
-// import phantom65 from '../images/portfolio/65phantom.png'
 import alice60 from '../images/portfolio/alice60.png'
 import am12 from '../images/portfolio/am12.PNG'
 import anubis from '../images/portfolio/anubis.png'
@@ -26,6 +25,22 @@ const Portfolio = () => {
             <h2>Thank you for checking out my Portfolio</h2>
             <br />
             <p id='portfolio-heading-text'>Displaying below are some of the custom designs I've done for other people and maybe a crazy idea I've had along the way.</p>
+            <br />
+            <p>My rates are:</p>
+            <ul>
+              <li>For a personal design: $275/ hour</li>
+                <ul>I will handle prototyping and ordering</ul>
+              <li>For open source designs: $195/ hour</li>
+                <ul>Once the models are released, you're free to do what you want with them</ul>
+                <ul>Running a for profit group buy is against terms and violates the license agreement</ul>
+              <li>For group buy designs: $1000 + Commission</li>
+                <ul>1 - 10: $200/ unit</ul>
+                <ul>11 - 50: $150/ unit</ul>
+                <ul>51 - 100: $100/ unit</ul>
+                <ul>101 - 200: $75/ unit</ul>
+                <ul>201 - 350: $50/ unit</ul>
+                <ul>351+: $25/ unit</ul>
+            </ul>
 
 
           </div>
@@ -33,7 +48,7 @@ const Portfolio = () => {
           <div class="4 col-xs-12">
 
 
-          <Carousel>
+          <Carousel interval={15000}>
       <Carousel.Item>
         <img className='d-block w-100' src={alice60} alt='First slide' />
         <Carousel.Caption>
@@ -96,7 +111,7 @@ const Portfolio = () => {
         <img className='d-block w-100' src={macro} alt='Third slide' />
 
         <Carousel.Caption>
-          <h3>Another at the 60% alice</h3>
+          <h3>Another render the 60% alice</h3>
           <p>
             Why? I just felt like flexing my render skills.
           </p>
