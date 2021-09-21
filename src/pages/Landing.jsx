@@ -26,7 +26,10 @@ const Landing = () => {
 
         <h1 id="landing-heading">Elevate your workspace...</h1>
         <p id="landing-text">As developers we know what it feels like when our fingers get tired during prolonged typing sessions. <br />
-        The reliability and feel of a bespoke custom mechanical keyboard will provide a truly comfortable typing experience.</p>
+        The reliability and feel of a bespoke custom mechanical keyboard will provide a truly comfortable typing experience...
+        <br/>
+        ...without the fatigue
+        </p>
 
          <Button id="enter-button" variant="info" onClick={e => setRedirect(true)}> Enter </Button>
       </Container>

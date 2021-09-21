@@ -43,7 +43,7 @@ const Navigation = (props) => {
   }
 
   return (
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <nav className="navbar navbar-expand-md navbar-light bg-light mb-4">
           <div className="container-fluid">
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
