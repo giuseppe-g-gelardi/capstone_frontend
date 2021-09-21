@@ -24,6 +24,7 @@ const Navigation = (props) => {
         </li>
       </ul>
     )
+    
   } else {
     menu = (
       <ul className="navbar-nav me-auto mb-2 mb-md-0">
@@ -56,7 +57,7 @@ const Navigation = (props) => {
                   <Link to="/portfolio" className="nav-link">Portfolio</Link>
                 </li>
                 <li className="nav-item active">
-                  <Link to="/builder" className="nav-link">Builder</Link>
+                  <Link to="/builder" className="nav-link">Builder (beta)</Link>
                 </li>
                 <li className="nav-item active">
                   <Link to="/commissions" className="nav-link">Commissions</Link>

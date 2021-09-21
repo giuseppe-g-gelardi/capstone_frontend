@@ -52,7 +52,16 @@ const BuilderForm = () => {
   }
 
   return (
-    <div>
+
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+
+
+        <div>
     <div className="builderform">
       <Form onSubmit={submit}>
           <Form.Select aria-label="layout"
@@ -86,6 +95,19 @@ const BuilderForm = () => {
           keycaps={keycap_color}
         />
       </div>
+
+
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    </div>
+
+
+
+
+
+    
   )
 }
 

@@ -8,7 +8,7 @@ const Builder = (props) => {
 
   if (props.user === '') {
     builderForm = (
-      <h1>You need to be logged in to submit a request!</h1>
+      <h1>Please log in if you would like to submit a commission request</h1>
     )
   } else {
     builderForm = (
@@ -18,9 +18,6 @@ const Builder = (props) => {
 
   return (
     <div>
-      <h2>if youre interested in a custom 1:1 commission:</h2>
-      <h3>fill out this form:</h3>
-      <br/>
       {builderForm}
     </div>
   )

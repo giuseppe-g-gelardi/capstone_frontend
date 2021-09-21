@@ -1,13 +1,35 @@
-#landing-title {
+#landing-heading {
   color: rgb(142, 113, 162);
+  padding-left: 25px;
 }
 
 #landing-text {
   color: rgb(142, 113, 162);
+  padding-left: 25px;
+
 }
 
 #enter-button {
+  position: absolute;
+  background: #fff;
   color: rgb(142, 113, 162);
-  background-color: rgb(23, 11, 25);
-  outline-color: none !important;
+  border: 2px solid rgb(142, 113, 162);
+  border-radius: 3px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  transition: .5s ease;
+  top: 15%;
+  left: 15%;
+}
+
+#about-right {
+  margin-top: 35px;
+  margin-bottom: 5px;
+  justify-content: center;
+}
+
+#about-left {
+  margin-top: 35px;
+  margin-bottom: 5px;
+  justify-content: center;
 }

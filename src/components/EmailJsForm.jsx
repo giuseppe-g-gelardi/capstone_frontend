@@ -96,11 +96,6 @@ const EmailJsForm = (props) => {
           <Button type='submit'>Submit</Button>
         </Form>
 
-
-
-
-
-            
           </div>
           <div className="col-md-3">
 
