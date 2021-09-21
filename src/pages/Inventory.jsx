@@ -27,9 +27,9 @@ const Inventory = () => {
 
   return (
     <div>
-      <h2>Current inventory</h2>
+      <h2 id="inventory-heading" >Current inventory</h2>
 
-      <div className='inventory'>
+      <div id='inventory-filter' className='inventory'>
         <input
           type='text'
           placeholder='Filter...'
@@ -37,8 +37,9 @@ const Inventory = () => {
             setSearchTerm(e.target.value)
           }}
         />
+        <br />
         <div className='table'>
-          <Table responsive striped bordered hover variant='dark'>
+          <Table responsive striped bordered hover variant='light'>
             <thead>
               <tr>
                 <th>Name</th>

@@ -33,3 +33,15 @@
   margin-bottom: 5px;
   justify-content: center;
 }
+
+#inventory-heading {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+#inventory-filter {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
