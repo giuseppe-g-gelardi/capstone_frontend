@@ -1,23 +1,15 @@
-import React from 'react';
+import React from 'react'
 
-const Home = (props) => {
-  let greeting;
+const Home = props => {
+  let greeting
 
   if (props.user === '') {
-    greeting = (
-      <h2>Hello!</h2>
-    )
+    greeting = <h2>Hello!</h2>
   } else {
-    greeting = (
-      <h2>Welcome back, {props.user}</h2>
-    )
+    greeting = <h2>Welcome back, {props.user}</h2>
   }
-  
-  return (
-    <div>
-      {greeting}
-    </div>
-  )
+
+  return <div>{greeting}</div>
 }
 
-export default Home;
+export default Home

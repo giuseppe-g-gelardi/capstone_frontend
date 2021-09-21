@@ -5,7 +5,7 @@ import jwtDecode from 'jwt-decode'
 import BuilderSubmit from './BuilderSubmit'
 import BuilderImage from './BuilderImage'
 
-const BuilderForm = (props) => {
+const BuilderForm = props => {
   const [user, setUser] = useState({})
   const [layout, setLayout] = useState({})
   const [color, setColor] = useState({})
@@ -60,8 +60,6 @@ const BuilderForm = (props) => {
   //   setIsDisabled(false)
   // }
 
-  
-
   return (
     <div class='container'>
       <div class='row'>
@@ -115,8 +113,9 @@ const BuilderForm = (props) => {
             </Form.Select>
 
             {/* <Button type='submit' disabled={isDisabled} >Submit!</Button> */}
-            <Button type='submit' active >Submit!</Button>
-
+            <Button type='submit' active>
+              Submit!
+            </Button>
           </Form>
         </div>
         <BuilderSubmit

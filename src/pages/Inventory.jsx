@@ -27,7 +27,7 @@ const Inventory = () => {
 
   return (
     <div>
-      <h2 id="inventory-heading" >Current inventory</h2>
+      <h2 id='inventory-heading'>Current inventory</h2>
 
       <div id='inventory-filter' className='inventory'>
         <input
@@ -92,9 +92,6 @@ const Inventory = () => {
 }
 
 export default Inventory
-
-
-
 
 // import React, { useState, useEffect } from 'react'
 // import { Table } from 'react-bootstrap'
